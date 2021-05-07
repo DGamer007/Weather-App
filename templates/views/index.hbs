@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/microsoft.png">
+    <link rel="stylesheet" href="/css/style1.css">
+    <title>Weather</title>
+</head>
+
+<body>
+
+    {{>header}}
+
+    <div class="main-content">
+        <form>
+            <input type="text" name="location" id="location" autocomplete="off" placeholder="Enter Location">
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="error-para"></p>
+        <p id="content-para">
+            <strong><u>Location:</u> </strong> <span id="location"></span><br>
+            <strong><u>Weather:</u> </strong><span id="weather"></span><br>
+            <strong><u>Current Temperature(C):</u> </strong><span id="temp"></span><br>
+            <strong><u>FeelsLike(C):</u> </strong><span id="feelslike"></span><br>
+            <strong><u>Precipitation(%):</u> </strong><span id="precipitation"></span><br>
+        </p>
+
+    </div>
+
+    {{>footer}}
+
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
