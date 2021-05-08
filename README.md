@@ -8,6 +8,8 @@ This application also provides API to get the weather information for any locati
 
 > Public API: ```https://dgamer-weather-app.herokuapp.com/weather?address={Location}```
 
+Using this URL, one will be able to get the weather information for the **Location** provided to URL.
+
 
 ## Used APIs:
 
