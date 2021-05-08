@@ -5,29 +5,26 @@ const { request } = require('http')
 const geoLocation = require('./utils/geoCode')
 const forecast = require('./utils/forecast')
 
-console.log(__dirname)
-console.log(path.join(__dirname, '../public'))
+const public_dir = path.join(__dirname, '../public')    //Public Directory Path
+const views_dir = path.join(__dirname, "../templates/views")    //views Directory Path
+const partials_dir = path.join(__dirname, '../templates/partials')  //Partials Directory Path
 
-const app = express()
-const port = process.env.PORT || 3000;
+const app = express()   //Instanciate 'express' module
+const port = process.env.PORT || 3000;  //Port on which the app has been deployed
 
-const public_dir = path.join(__dirname, '../public')
-const views_dir = path.join(__dirname, "../templates/views")
-const partials_dir = path.join(__dirname, '../templates/partials')
+app.set('view engine', 'hbs')   //tells 'express' how to render things (which in this case - using 'hbs')
+app.set('views', views_dir)     //tells 'express' where to find views directory or views
+hbs.registerPartials(partials_dir)  //tells 'hbs' where to find partials
 
-app.set('view engine', 'hbs')
-app.set('views', views_dir)
+app.use(express.static(public_dir)) //Static root directory for project
 
-hbs.registerPartials(partials_dir)
-
-app.use(express.static(public_dir))
-
-app.get('', (req, res) => {
-    res.render('index', {
-        title: "Weather",
-        name: "DGamer"
-    })
-})
+app.get('', (req, res) => {         //app.get() method will get the req from first arguement which is a string 
+    res.render('index', {           // and in this case it's empty...
+        title: "Weather",           // The second arguement is a callback function, which has two arguements
+        name: "DGamer"              // 1. req (that has been sent from 1st arguement of app.get() method)
+    })                              // 2. res (response that we are gonna send back)
+})  // res.render() method will call the view in 1st arguement and in 2nd arguement we can pass data to that view
+//and response will be send back from where it has been asked
 
 app.get('/help', (req, res) => {
     res.render('help', {
@@ -99,6 +96,6 @@ app.get('*', (req, res) => {
     });
 })
 
-app.listen(port, () => {
-    console.log("Server is up on Port:" + port);
-});
+app.listen(port, () => {                            // app.listen() method will listen to requests made from 
+    console.log("Server is up on Port:" + port);    // perticular port ID and of course that port ID will be the
+});                                                 // same on which our app has been deployed        
