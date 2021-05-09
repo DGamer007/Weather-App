@@ -71,19 +71,6 @@ app.get('/weather', (req, res) => {
     });
 })
 
-app.get('/products', (req, res) => {
-
-    if (!req.query.search) {
-        return res.send({
-            error: "Provide search term"
-        })
-    }
-
-    res.send({
-        products: []
-    })
-})
-
 app.get('/help/*', (req, res) => {
     res.render('403', {
         error: "Help article not found."
