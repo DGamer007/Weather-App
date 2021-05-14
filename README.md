@@ -2,7 +2,7 @@
 
 A complete Node.js Web Application, which will display Weather Information for location that has been provided by user.
 
-# Weather-App
+# Weather-App-API
 
 This application also provides API to get the weather information for any location possible.
 
