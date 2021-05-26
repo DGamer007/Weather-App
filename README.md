@@ -19,3 +19,6 @@ Using this URL, one will be able to get the weather information for the **Locati
 
 ##### I have already deployed this Node.js Application on [Heroku](https://www.heroku.com)
 [Click Here](https://dgamer-weather-app.herokuapp.com/) to visit Weather-App
+
+##### Contributors:
+    Dhruv Prajapati
