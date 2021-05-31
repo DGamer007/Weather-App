@@ -6,7 +6,9 @@ A complete Node.js Web Application, which will display Weather Information for l
 
 This application also provides API to get the weather information for any location possible.
 
-> Public API: ```https://dgamer-weather-app.herokuapp.com/weather?address={Location}```
+Public API:
+
+    https://dgamer-weather-app.herokuapp.com/weather?address={Location}
 
 Using this URL, one will be able to get the weather information for the **Location** provided to URL.
 
@@ -21,4 +23,5 @@ Using this URL, one will be able to get the weather information for the **Locati
 [Click Here](https://dgamer-weather-app.herokuapp.com/) to visit Weather-App
 
 ##### Contributors:
-    Dhruv Prajapati
+
+> Dhruv Prajapati
